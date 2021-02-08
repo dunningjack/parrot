@@ -25,12 +25,12 @@ async def parrot(message):
     command = message.split(" ")
     if command[1].isdigit:
         iterations = command[1]
-        for i in range(2, (len(command))):
+        for i in range(1, (len(command))):
             separator = ', '
             statement = separator.join(command)
 
         for j in range(1, iterations):
-            await client.send_message(message.channel, statement)
+            await client.process_commands(statement)
 
     await client.process_commands(message)
 
